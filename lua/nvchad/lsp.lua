@@ -17,16 +17,10 @@ vim.diagnostic.config {
   update_in_insert = false,
 }
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "single",
-})
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "single",
-  focusable = false,
-  relative = "cursor",
-})
+-- LSP floating windows
+vim.o.winborder = "single"
 
--- Borders for LspInfo winodw
+-- Borders for LspInfo window
 local win = require "lspconfig.ui.windows"
 local _default_opts = win.default_opts
 
